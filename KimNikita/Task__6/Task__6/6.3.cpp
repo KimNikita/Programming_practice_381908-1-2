@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include <vector>
 #include <string>
-#include <Windows.h>
 #include <locale>
 #include "GameField.h"
 #include "AI.h"
@@ -67,8 +66,6 @@ bool iscorrectvvod(string s)
 int main()
 {
 	srand(time(NULL));
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "Russia");
 	GameField field;
 	AI comp(field);
