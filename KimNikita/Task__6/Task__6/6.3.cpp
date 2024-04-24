@@ -86,7 +86,7 @@ int main()
 	do
 	{
 		f = true;
-		cout << "Введите координаты четырехпалубного корабля (пример A 1 D 1) :" << endl;
+		cout << "Введите координаты четырехпалубного корабля (пример A 1 D 1) :" << flush << endl;
 		cin >> x >> y >> x1 >> y1;
 		if (!field.IsCorrectShip(translate(x), translate(y), translate(x1), translate(y1), 4) || !iscorrectvvod(x + y + x1 + y1 + "v"))
 		{
@@ -97,7 +97,6 @@ int main()
 			if (!field.AddUserShip(Ship(translate(x), translate(y), translate(x1), translate(y1))))
 				f = false;
 		}
-		system("cls");
 		cout << field;
 	} while (!f);
 	for (int i = 0; i < 2; i++)
@@ -105,7 +104,7 @@ int main()
 		do
 		{
 			f = true;
-			cout << "Введите координаты трехпалубного корабля (пример A 1 С 1) :" << endl;
+			cout << "Введите координаты трехпалубного корабля (пример A 1 С 1) :" << flush << endl;
 			cin >> x >> y >> x1 >> y1;
 			if (!field.IsCorrectShip(translate(x), translate(y), translate(x1), translate(y1), 3) || !iscorrectvvod(x + y + x1 + y1 + "v"))
 			{
@@ -116,7 +115,6 @@ int main()
 				if (!field.AddUserShip(Ship(translate(x), translate(y), translate(x1), translate(y1))))
 					f = false;
 			}
-			system("cls");
 			cout << field;
 		} while (!f);
 	}
@@ -125,7 +123,7 @@ int main()
 		do
 		{
 			f = true;
-			cout << "Введите координаты двухпалубного корабля (пример A 1 B 1) :" << endl;
+			cout << "Введите координаты двухпалубного корабля (пример A 1 B 1) :" << flush << endl;
 			cin >> x >> y >> x1 >> y1;
 			if (!field.IsCorrectShip(translate(x), translate(y), translate(x1), translate(y1), 2) || !iscorrectvvod(x + y + x1 + y1 + "v"))
 			{
@@ -136,7 +134,6 @@ int main()
 				if (!field.AddUserShip(Ship(translate(x), translate(y), translate(x1), translate(y1))))
 					f = false;
 			}
-			system("cls");
 			cout << field;
 		} while (!f);
 	}
@@ -145,7 +142,7 @@ int main()
 		do
 		{
 			f = true;
-			cout << "Введите координаты однопалубного корабля (пример A 1) :" << endl;
+			cout << "Введите координаты однопалубного корабля (пример A 1) :" << flush << endl;
 			cin >> x >> y;
 			if (!field.IsCorrectShip(translate(x), translate(y), translate(x), translate(y), 1) || !iscorrectvvod(x + y + "v"))
 			{
@@ -156,7 +153,6 @@ int main()
 				if (!field.AddUserShip(Ship(translate(x), translate(y), translate(x), translate(y))))
 					f = false;
 			}
-			system("cls");
 			cout << field;
 		} while (!f);
 	}
@@ -171,7 +167,7 @@ int main()
 			f = true;
 			do
 			{
-				cout << "Введите координаты выстрела (пример A 1) :" << endl;
+				cout << "Введите координаты выстрела (пример A 1) :" << flush << endl;
 				cin >> x >> y;
 				getchar();
 				if (!field.IsCorrectShot(translate(x), translate(y)) || !iscorrectvvod(x + y + "v"))
@@ -190,9 +186,8 @@ int main()
 						order = 2;
 						do
 						{
-							system("cls");
 							cout << field;
-							cout << "Промах!" << " (нажмите ""Enter"" для продолжения)" << endl;
+							cout << "Промах!" << " (нажмите ""Enter"" для продолжения)" << flush << endl;
 						} while (getchar() != 10);
 					}
 					if (rez == 1)
@@ -200,7 +195,6 @@ int main()
 						int end = field.IsGameOver();
 						if (end)
 						{
-							system("cls");
 							cout << field;
 							if (end == 1)
 								cout << "Вы проиграли :(" << endl;
@@ -210,9 +204,8 @@ int main()
 						}
 						do
 						{
-							system("cls");
 							cout << field;
-							cout << "Попадание!" << " (нажмите ""Enter"" для продолжения)" << endl;
+							cout << "Попадание!" << " (нажмите ""Enter"" для продолжения)" << flush << endl;
 						} while (getchar() != 10);
 					}
 					if (rez == 2)
@@ -220,7 +213,6 @@ int main()
 						int end = field.IsGameOver();
 						if (end)
 						{
-							system("cls");
 							cout << field;
 							if (end == 1)
 								cout << "Вы проиграли :(" << endl;
@@ -230,13 +222,11 @@ int main()
 						}
 						do
 						{
-							system("cls");
 							cout << field;
-							cout << "Корабль уничтожен!" << " (нажмите ""Enter"" для продолжения)" << endl;
+							cout << "Корабль уничтожен!" << " (нажмите ""Enter"" для продолжения)" << flush << endl;
 						} while (getchar() != 10);
 					}
 				}
-				system("cls");
 				cout << field;
 			} while (!f);
 		}
@@ -248,30 +238,26 @@ int main()
 				order = 1;
 				do
 				{
-					system("cls");
 					cout << field;
-					cout << "Компьютер промахнулся в " + translate(comp_shot) << " (нажмите ""Enter"" для продолжения)" << endl;
+					cout << "Компьютер промахнулся в " + translate(comp_shot) << " (нажмите ""Enter"" для продолжения)" << flush << endl;
 				} while (getchar() != 10);
 			}
 			if (rez == 1)
 			{
 				do
 				{
-					system("cls");
 					cout << field;
-					cout << "Компьютер попал в " + translate(comp_shot) << " (нажмите ""Enter"" для продолжения)" << endl;
+					cout << "Компьютер попал в " + translate(comp_shot) << " (нажмите ""Enter"" для продолжения)" << flush << endl;
 				} while (getchar() != 10);
 			}
 			if (rez == 2)
 			{
 				do
 				{
-					system("cls");
 					cout << field;
-					cout << "Компьютер уничтожил корабль в " + translate(comp_shot) << " (нажмите ""Enter"" для продолжения)" << endl;
+					cout << "Компьютер уничтожил корабль в " + translate(comp_shot) << " (нажмите ""Enter"" для продолжения)" << flush << endl;
 				} while (getchar() != 10);
 			}
-			system("cls");
 			cout << field;
 		}
 	}
